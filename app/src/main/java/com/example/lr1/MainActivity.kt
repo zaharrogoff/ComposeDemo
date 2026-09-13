@@ -15,13 +15,14 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.lr1.ui.theme.Lr1Theme
@@ -29,6 +30,7 @@ import com.example.lr1.ui.theme.Lr1Theme
 
 
 class MainActivity : ComponentActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -41,12 +43,18 @@ class MainActivity : ComponentActivity() {
             Lr1Theme {
 
                 Scaffold(
+
                     modifier = Modifier.fillMaxSize()
+
                 ) { innerPadding ->
 
+
                     DemoScreen(
+
                         modifier = Modifier.padding(innerPadding)
+
                     )
+
 
                 }
 
@@ -60,6 +68,7 @@ class MainActivity : ComponentActivity() {
 
 
 
+
 @Composable
 fun DemoText(
     message: String,
@@ -67,12 +76,17 @@ fun DemoText(
 ) {
 
     Text(
+
         text = message,
+
         fontSize = fontSize.sp,
+
         fontWeight = FontWeight.Bold
+
     )
 
 }
+
 
 
 
@@ -95,6 +109,7 @@ fun DemoSlider(
     )
 
 }
+
 
 
 
@@ -167,6 +182,21 @@ fun DemoScreen(
 
         )
 
+
+    }
+
+}
+
+
+
+
+@Preview(showSystemUi = true)
+@Composable
+fun DemoScreenPreview() {
+
+    Lr1Theme {
+
+        DemoScreen()
 
     }
 
