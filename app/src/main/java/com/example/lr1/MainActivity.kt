@@ -30,32 +30,17 @@ import com.example.lr1.ui.theme.Lr1Theme
 
 
 class MainActivity : ComponentActivity() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-
         enableEdgeToEdge()
-
         setContent {
-
             Lr1Theme {
-
                 Scaffold(
-
                     modifier = Modifier.fillMaxSize()
-
                 ) { innerPadding ->
-
-
                     DemoScreen(
-
                         modifier = Modifier.padding(innerPadding)
-
                     )
-
-
                 }
 
             }
@@ -87,9 +72,6 @@ fun DemoText(
 
 }
 
-
-
-
 @Composable
 fun DemoSlider(
     sliderPosition: Float,
@@ -100,7 +82,7 @@ fun DemoSlider(
 
         modifier = Modifier.padding(10.dp),
 
-        valueRange = 20f..38f,
+        valueRange = 36f..90f,
 
         value = sliderPosition,
 
@@ -121,7 +103,7 @@ fun DemoScreen(
 
     var sliderPosition by remember {
 
-        mutableFloatStateOf(20f)
+        mutableFloatStateOf(36f)
 
     }
 
@@ -130,7 +112,6 @@ fun DemoScreen(
     val handlePositionChange = { position: Float ->
 
         sliderPosition = position
-
     }
 
 
@@ -151,6 +132,13 @@ fun DemoScreen(
             message = "Welcome to Compose",
 
             fontSize = sliderPosition
+
+        )
+
+        Text(
+
+            text = "Welcome to Kotlin",
+            fontSize = 20.sp
 
         )
 
